@@ -3,7 +3,31 @@ import Footer from "../../components/footer";
 import Header from "../../components/header";
 import { client } from "../../libs/client";
 import styles from "../../styles/Home.module.scss";
+import { useRouter } from 'next/router';
 
+
+
+//SSG
+export const getStaticProps = async (context) => {
+  const id = context.params.id;
+  const data = await client.get({ endpoint: "nexttech", contentId: id });
+
+  return {
+    props: {
+      blog: data,
+    },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const data = await client.get({ endpoint: "nexttech" });
+
+  const paths = data.contents.map((content) => `/blog/${content.id}`);
+  return {
+    paths,
+    fallback: false,
+  };
+};
 
 export default function BlogId({ blog }) {
   return (
