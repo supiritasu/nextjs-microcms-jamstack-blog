@@ -5,6 +5,7 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Genre from "../components/genre";
 import PostCard from "../components/PostCard";
+import ThemeController from "../components/ThemeController";
 
 
 
@@ -29,6 +30,8 @@ export default function Home({ blog }) {
         <PostCard key={post.id} post={post} />
       ))}
     </div>
+
+    <ThemeController/>
     <div>aaa</div>
     <img src="https://images.microcms-assets.io/assets/aff5cf34a3414f0eaf69a09c8dd6f7b7/5d266405d20b4fb79f3d32ba49faf8f7/blog15.JPG"></img>
 
