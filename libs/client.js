@@ -1,6 +1,6 @@
 import { createClient } from "microcms-js-sdk";
 
 export const client = createClient({
-  serviceDomain: "blog-tutorial-nextjs",
-  apiKey: process.env.API_KEY,
+  serviceDomain: "nexttech",
+  apiKey: "IGCVLhHIAlBJWRrrXKMWat5LV6iKPTZ9ZnTp",
 });
