@@ -26,6 +26,13 @@ const PostCard = ({ post }) => {
           <div className="p-4">
             <h1 className="text-xl font-semibold mb-2 text-white">{post.title}</h1>
             <p className="text-sm text-gray-500 mb-2">{post.category}</p>
+            <div className="flex space-x-2 mb-2">
+              {post.tag.map((tag, index) => (
+                <p key={index} className="text-sm text-gray-500">
+                {tag}
+                </p>
+              ))}
+            </div>
             <p className="text-white mb-4">{post.excerpt}</p>
             <p className="text-white mb-4">{formatDate(post.publishedAt)}</p>
             <p className="text-white mb-4">

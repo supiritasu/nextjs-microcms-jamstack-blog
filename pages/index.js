@@ -6,6 +6,7 @@ import Footer from "../components/footer";
 import Genre from "../components/genre";
 import PostCard from "../components/PostCard";
 import ThemeController from "../components/ThemeController";
+import Card from "../components/card";
 
 
 
@@ -31,12 +32,12 @@ export default function Home({ blog }) {
       ))}
     </div>
 
-    <ThemeController/>
-    <div>aaa</div>
+    {/* <ThemeController/> */}
     <img src="https://images.microcms-assets.io/assets/aff5cf34a3414f0eaf69a09c8dd6f7b7/5d266405d20b4fb79f3d32ba49faf8f7/blog15.JPG"></img>
 
     <Genre/>
     <Footer/>
+    {/* <Card/> */}
     </>
   );
 }

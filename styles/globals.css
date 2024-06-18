@@ -30,7 +30,7 @@ a {
 } */
 
 /* globals.css */
-:root {
+/* :root {
   --bg-color: white;
   --text-color: black;
 }
@@ -43,4 +43,4 @@ a {
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-}
+} */
