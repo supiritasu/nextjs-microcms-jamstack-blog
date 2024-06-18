@@ -39,7 +39,7 @@ export default function Home({ blog }) {
       <Header />
       
       <div className="mt-8"> {/* ヘッダーとカードの間に上部のマージンを追加 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-12 ">
           {currentPosts.map((post) => (
             <Card key={post.id} post={post} />
           ))}

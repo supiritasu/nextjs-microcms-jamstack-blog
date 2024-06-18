@@ -1,5 +1,6 @@
-// pages/about.js
 import React, { useState } from 'react';
+import Header from '../../components/header';
+import Footer from '../../components/footer';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('profile');
@@ -9,9 +10,11 @@ const About = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-8">
+    <>
+      <Header />
+      <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+      <div className="w-full flex justify-center my-8"> {/* Flexboxを使用して中央揃え */}
+        <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-8">About Me</h1>
           <div className="mb-8">
             <ul className="flex border-b border-gray-200">
@@ -53,11 +56,11 @@ const About = () => {
               </li>
             </ul>
           </div>
-          <div className="bg-white p-8 rounded-b-lg">
+          <div className="bg-white p-8 rounded-b-lg min-h-[200px]"> {/* 最小高さを設定 */}
             {activeTab === 'profile' && (
               <div>
                 <p className="text-gray-700 mb-4">
-                  私は、東京都出身の23歳の学生です。趣味は読書とランニングで、週末はよく公園を走っています。
+                  私は、東京都出身の学生です。趣味は読書とランニングで、週末はよく公園を走っています。
                 </p>
                 <p className="text-gray-700">
                   将来の夢は、自分のスタートアップを立ち上げることです。ITの力で世界を変えたいと考えています。
@@ -95,6 +98,8 @@ const About = () => {
         </div>
       </div>
     </div>
+      <Footer />
+    </>
   );
 };
 
