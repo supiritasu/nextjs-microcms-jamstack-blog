@@ -4,10 +4,10 @@ import styles from "../styles/Home.module.scss";
 import Header from "../components/header";
 import Footer from "../components/footer";
 import Genre from "../components/genre";
-import PostCard from "../components/PostCard";
 import Card from "../components/card";
 import HomePagenation from "../components/home_pagenation";
 import { useState } from "react";
+import Hero from "../components/hero";
 
 // SSG
 export const getStaticProps = async () => {
@@ -37,6 +37,13 @@ export default function Home({ blog }) {
   return (
     <>
       <Header />
+      <Hero/>
+
+      <div className="mx-auto text-center">
+        <h1 className="text-6xl font-bold">投稿記事</h1>
+      </div>
+
+
       
       <div className="mt-8"> {/* ヘッダーとカードの間に上部のマージンを追加 */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mx-12 ">

@@ -5,6 +5,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Genre from "../../components/genre";
 import PostCard from "../../components/PostCard";
+import BlogList from "../../components/bloglist";
 
 
 
@@ -24,15 +25,17 @@ export default function Home({ blog }) {
   return (
     <>
     <Header/>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div className="mx-auto text-center">
+        <h1 className="text-6xl font-bold mt-12">記事一覧</h1>
+      </div>
+    {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
       {blog.map((post) => (
         <PostCard key={post.id} post={post} />
       ))}
+    </div> */}
+    <div className="mt-8 ml-10">
+        <BlogList blogs={blog} />
     </div>
-    <div>aaa</div>
-    <img src="https://images.microcms-assets.io/assets/aff5cf34a3414f0eaf69a09c8dd6f7b7/5d266405d20b4fb79f3d32ba49faf8f7/blog15.JPG"></img>
-
-    <Genre/>
     <Footer/>
     </>
   );
