@@ -28,7 +28,7 @@ export default function Home({ blog }) {
     <Header/>
     <div className="mx-auto text-center">
         <h1 className="text-6xl font-bold mt-12">記事一覧</h1>
-      </div>
+    </div>
     {/* <div className="mt-8 ml-10">
         <BlogList blogs={blog} />
     </div> */}
