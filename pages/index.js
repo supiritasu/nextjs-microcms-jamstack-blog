@@ -5,10 +5,9 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 import Genre from "../components/genre";
 import PostCard from "../components/PostCard";
-import ThemeController from "../components/ThemeController";
+
 import Card from "../components/card";
-
-
+import HomePagenation from "../components/home_pagenation";
 
 
 //SSG
@@ -25,19 +24,25 @@ export const getStaticProps = async () => {
 export default function Home({ blog }) {
   return (
     <>
-    <Header/>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {blog.map((post) => (
-        <PostCard key={post.id} post={post} />
-      ))}
-    </div>
+      <Header />
+      
+      <div className="mt-8"> {/* ヘッダーとカードの間に上部のマージンを追加 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {blog.map((post) => (
+          <Card key={post.id} post={post} />
+          ))}
+        </div>
+        <div className="flex justify-center mt-8"> {/* Flexboxを使用して中央揃え */}
+          <HomePagenation />
+        </div>
+      </div>
 
-    {/* <ThemeController/> */}
-    <img src="https://images.microcms-assets.io/assets/aff5cf34a3414f0eaf69a09c8dd6f7b7/5d266405d20b4fb79f3d32ba49faf8f7/blog15.JPG"></img>
+      <div className="mt-8"> {/* ジャンルとカードの間に上部のマージンを追加 */}
+        <Genre />
+      </div>      
 
-    <Genre/>
-    <Footer/>
-    {/* <Card/> */}
+      <Footer />
     </>
   );
 }
+

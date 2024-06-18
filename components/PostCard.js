@@ -33,7 +33,7 @@ const PostCard = ({ post }) => {
                 </p>
               ))}
             </div>
-            <p className="text-white mb-4">{post.excerpt}</p>
+            {/* <p className="text-white mb-4">{post.excerpt}</p> */}
             <p className="text-white mb-4">{formatDate(post.publishedAt)}</p>
             <p className="text-white mb-4">
             {post.thumbnail && post.thumbnail.url ? (

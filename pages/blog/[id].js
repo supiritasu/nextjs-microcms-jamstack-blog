@@ -1,6 +1,7 @@
 import PostCard from "../../components/PostCard";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
+import Pagenation from "../../components/pagenation";
 import { client } from "../../libs/client";
 import styles from "../../styles/Home.module.scss";
 import { useRouter } from 'next/router';
@@ -86,9 +87,11 @@ export default function BlogId({ blog }) {
         )}
       </main>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <Pagenation/>
+
+      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <PostCard key={blog.id} post={blog} />
-      </div>
+      </div> */}
 
       <Footer />
     </>
