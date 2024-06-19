@@ -11,8 +11,8 @@ const formatDate = (dateString) => {
 const BlogList = ({ blogs }) => {
   return (
     <>
-    <section className="text-gray-600 body-font overflow-hidden">
-      <div className="container px-5 py-24">
+    <section className="text-gray-600 body-font overflow-hidden ">
+      <div className="container px-5 ">
         <div className="-my-8 divide-y-2 divide-gray-100">
           {blogs.map((post) => (
             <div key={post.id} className="py-8 flex flex-wrap md:flex-nowrap">
