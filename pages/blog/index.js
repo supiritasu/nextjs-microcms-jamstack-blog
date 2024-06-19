@@ -8,6 +8,7 @@ import PostCard from "../../components/PostCard";
 import BlogList from "../../components/bloglist";
 import FilteredBlogList from "../../components/FilteredBlogList";
 import Author from "../../components/author";
+import Drawer from "../../components/drawer";
 
 
 
@@ -37,6 +38,7 @@ export default function Home({ blog }) {
 
     </div> */}
       <div className="mt-4 flex flex-col">
+        <Drawer/>
         
         <FilteredBlogList blogs={blog} className="w-full p-4" />
       </div>
