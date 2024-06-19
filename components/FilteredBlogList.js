@@ -4,26 +4,32 @@ import BlogList from './bloglist';
 import TagList from './TagList';
 
 const FilteredBlogList = ({ blogs }) => {
-  const [selectedTag, setSelectedTag] = useState(null);
+  const [selectedTags, setSelectedTags] = useState([]);
 
   const allTags = Array.from(new Set(blogs.flatMap(blog => blog.tag)));
 
   const handleTagClick = (tag) => {
-    setSelectedTag(tag);
+    setSelectedTags((prevSelectedTags) => {
+      if (prevSelectedTags.includes(tag)) {
+        return prevSelectedTags.filter(t => t !== tag);
+      } else {
+        return [...prevSelectedTags, tag];
+      }
+    });
   };
 
-  const handleClearTag = () => {
-    setSelectedTag(null);
+  const handleClearTags = () => {
+    setSelectedTags([]);
   };
 
-  const filteredBlogs = selectedTag
-    ? blogs.filter(blog => blog.tag.includes(selectedTag))
+  const filteredBlogs = selectedTags.length
+    ? blogs.filter(blog => selectedTags.every(tag => blog.tag.includes(tag)))
     : blogs;
 
   return (
     <div className="flex">
       <div className="w-1/4 p-4">
-        <TagList tags={allTags} selectedTag={selectedTag} onTagClick={handleTagClick} onClearTag={handleClearTag} />
+        <TagList tags={allTags} selectedTags={selectedTags} onTagClick={handleTagClick} onClearTags={handleClearTags} />
       </div>
       <div className="w-3/4 p-4">
         <BlogList blogs={filteredBlogs} />
