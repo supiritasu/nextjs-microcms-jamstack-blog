@@ -5,10 +5,9 @@ import Pagenation from "../../components/pagenation";
 import { client } from "../../libs/client";
 import styles from "../../styles/Home.module.scss";
 import { useRouter } from 'next/router';
+import { marked } from 'marked';
 
-
-
-//SSG
+// SSG
 export const getStaticProps = async (context) => {
   const id = context.params.id;
   const data = await client.get({ endpoint: "nexttech", contentId: id });
@@ -30,6 +29,10 @@ export const getStaticPaths = async () => {
   };
 };
 
+const markdownToHtml = (markdown) => {
+  return marked(markdown);
+};
+
 export default function BlogId({ blog }) {
   return (
     <>
@@ -38,42 +41,37 @@ export default function BlogId({ blog }) {
         <h1 className={styles.title}>{blog.title}</h1>
         <h2 className={styles.category}>{blog.category}</h2>
         <p className={styles.publishedAt}>{blog.publishedAt}</p>
-        <p className="text-black mb-4">
-          {blog.image && blog.image.url ? (
-            <img src={blog.image.url} alt="image" width={blog.image.width} height={blog.image.height} />
-          ) : (
-            "No image"
-          )}
-        </p>  
 
         {Array.isArray(blog.content) ? (
           blog.content.map((item, index) => (
             <div key={index} className={`${styles.post} ${styles.table}`}>
               {item.content && (
-                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
+                <div dangerouslySetInnerHTML={{ __html: markdownToHtml(item.content) }}></div>
               )}
               {item.image && item.image.length > 0 && (
-                <img
-                  src={item.image[0].url}
-                  alt="Blog Image"
-                  width={item.image[0].width}
-                  height={item.image[0].height}
-                />
-              )}
-              {item.image && item.image.length > 0 && (
-                <img
-                  src={item.image[1].url}
-                  alt="Blog Image2"
-                  width={item.image[1].width}
-                  height={item.image[1].height}
-                />
+                <div className="grid grid-cols-2 gap-4">
+                  <img
+                    src={item.image[0].url}
+                    alt="Blog Image"
+                    width={item.image[0].width}
+                    height={item.image[0].height}
+                    className="rounded-lg"
+                  />
+                  <img
+                    src={item.image[1].url}
+                    alt="Blog Image2"
+                    width={item.image[1].width}
+                    height={item.image[1].height}
+                    className="rounded-lg"
+                  />
+                </div>
               )}
             </div>
           ))
         ) : (
           blog.content && blog.content.content && (
             <div
-              dangerouslySetInnerHTML={{ __html: blog.content.content }}
+              dangerouslySetInnerHTML={{ __html: markdownToHtml(blog.content.content) }}
               className={`${styles.post} ${styles.table}`}
             ></div>
           )
@@ -81,17 +79,21 @@ export default function BlogId({ blog }) {
 
         {blog.body && (
           <div
-            dangerouslySetInnerHTML={{ __html: blog.body }}
+            dangerouslySetInnerHTML={{ __html: markdownToHtml(blog.body) }}
+            className={`${styles.post} ${styles.table}`}
+          ></div>
+        )}
+
+
+          {blog.content && blog.content.content && (
+          <div
+            dangerouslySetInnerHTML={{ __html: markdownToHtml(blog.content.content) }}
             className={`${styles.post} ${styles.table}`}
           ></div>
         )}
       </main>
 
-      <Pagenation/>
-
-      {/* <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <PostCard key={blog.id} post={blog} />
-      </div> */}
+      <Pagenation />
 
       <Footer />
     </>

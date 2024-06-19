@@ -27,28 +27,22 @@ export const getStaticProps = async () => {
 export default function Home({ blog }) {
   return (
     <>
-    <Header/>
-    
-    <div className="mx-auto text-center">
+      {/* <Header /> */}
+      <Drawer />
+      <div className="mx-auto text-center">
         <h1 className="text-6xl font-bold my-12">記事一覧</h1>
-    </div>
-    
-    {/* <div className="mt-8 ml-10">
-        <BlogList blogs={blog} />
-
-    </div> */}
-      <div className="mt-4 flex flex-col">
-        <Drawer/>
-        
-        <FilteredBlogList blogs={blog} className="w-full p-4" />
       </div>
 
-     
-
+      <div className="mt-4 flex flex-col">
+        {/* <Drawer /> */}
+        <div className="w-full p-4"> {/* ここでmd:ブレークポイント以上の時に表示 */}
+          <FilteredBlogList blogs={blog} />
+        </div>
+      </div>
       <div className="mt-8">
         <Genre />
       </div>
-    <Footer/>
+      <Footer />
     </>
   );
 }

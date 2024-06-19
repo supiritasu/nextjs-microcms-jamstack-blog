@@ -28,18 +28,18 @@ const FilteredBlogList = ({ blogs }) => {
     : blogs;
 
   return (
-    <div className="flex">
-        <div className="w-1/4 p-4">
-            <TagList tags={allTags} selectedTags={selectedTags} onTagClick={handleTagClick} onClearTags={handleClearTags} />
-        <div className="mt-8">
-            <Author className="w-full p-4 py-8" />
-        </div>
-
-        </div>
-        <div className="w-3/4 p-4">
-        <BlogList blogs={filteredBlogs} />
-        </div>
+<div className="flex flex-wrap">
+  <div className="w-full md:w-1/4 p-4 hidden md:block">
+    <TagList tags={allTags} selectedTags={selectedTags} onTagClick={handleTagClick} onClearTags={handleClearTags} />
+    <div className="mt-8">
+      <Author className="w-full p-4 py-8" />
     </div>
+  </div>
+  <div className="w-full md:w-3/4 p-4">
+    <BlogList blogs={filteredBlogs} />
+  </div>
+</div>
+
   );
 };
 
