@@ -73,6 +73,12 @@ export default function BlogId({ blog }) {
             ></div>
           )
         )}
+            {blog.body && (
+          <div
+            dangerouslySetInnerHTML={{ __html: blog.body }}
+            className={`${styles.post} ${styles.table}`}
+          ></div>
+        )}
       </main>
 
       <Pagenation />
