@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const formatDate = (dateString) => {
   const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
@@ -26,9 +27,9 @@ const Card = ({ post }) => {
           <a className="block">
             <figure>
               {post.thumbnail && post.thumbnail.url ? (
-                <img src={post.thumbnail.url} alt={post.title} />
+                <Image src={post.thumbnail.url} alt={post.title} />
               ) : (
-                <img src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
+                <Image src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
               )}
             </figure>
             <div className="card-body p-4">

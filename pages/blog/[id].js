@@ -3,6 +3,7 @@ import Header from "../../components/header";
 import Pagenation from "../../components/pagenation";
 import { client } from "../../libs/client";
 import styles from "../../styles/Home.module.scss";
+import Image from 'next/image';
 
 // SSG
 export const getStaticProps = async (context) => {
@@ -46,14 +47,14 @@ export default function BlogId({ blog }) {
               )}
               {item.image && item.image.length > 0 && (
                 <div className="grid grid-cols-2 gap-4">
-                  <img
+                  <Image
                     src={item.image[0].url}
                     alt="Blog Image"
                     width={item.image[0].width}
                     height={item.image[0].height}
                     className="rounded-lg"
                   />
-                  <img
+                  <Image
                     src={item.image[1].url}
                     alt="Blog Image2"
                     width={item.image[1].width}
