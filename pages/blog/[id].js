@@ -39,23 +39,27 @@ export default function BlogId({ blog }) {
           blog.content.map((item, index) => (
             <div key={index} className={`${styles.post} ${styles.table}`}>
               {item.main && (
-                <div 
+                <div
                   dangerouslySetInnerHTML={{ __html: item.main }}
-                  className={`${styles.post} ${styles.table}`}>
-                </div>
+                  className={`${styles.post} ${styles.table}`}
+                ></div>
               )}
               {item.image && item.image.length > 0 && (
-                <div className="flex flex-col gap-4">
-                  {item.image.map((image, idx) => (
-                    <img
-                      key={idx}
-                      src={image.url}
-                      alt={`Blog Image ${idx + 1}`}
-                      width={image.width}
-                      height={image.height}
-                      className="rounded-lg"
-                    />
-                  ))}
+                <div className="grid grid-cols-2 gap-4">
+                  <img
+                    src={item.image[0].url}
+                    alt="Blog Image"
+                    width={item.image[0].width}
+                    height={item.image[0].height}
+                    className="rounded-lg"
+                  />
+                  <img
+                    src={item.image[1].url}
+                    alt="Blog Image2"
+                    width={item.image[1].width}
+                    height={item.image[1].height}
+                    className="rounded-lg"
+                  />
                 </div>
               )}
             </div>
