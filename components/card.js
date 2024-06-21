@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { TwitterShareButton, LineShareButton } from 'react-share'; // LineShareButtonを追加
+import { TwitterShareButton, LineShareButton } from 'react-share'; 
 
 const formatDate = (dateString) => {
   const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
