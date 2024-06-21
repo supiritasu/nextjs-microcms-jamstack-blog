@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
+import Drawer from '../../components/drawer';
 
 const About = () => {
   const [activeTab, setActiveTab] = useState('profile');
@@ -11,7 +12,7 @@ const About = () => {
 
   return (
     <>
-      <Header />
+      <Drawer />
       <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
       <div className="w-full flex justify-center my-8"> {/* Flexboxを使用して中央揃え */}
         <div className="w-full max-w-4xl bg-white rounded-lg shadow-lg p-8">
