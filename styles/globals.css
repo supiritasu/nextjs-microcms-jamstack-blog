@@ -1,8 +1,8 @@
 @import "~tailwindcss/base";
 @import "~tailwindcss/components";
 @import "~tailwindcss/utilities";
-
-/* html,
+/* 
+html,
 body {
   padding: 0;
   margin: 0;
@@ -27,10 +27,10 @@ a {
     color: white;
     background: black;
   }
-} */
+}  */
 
 /* globals.css */
-/* :root {
+:root {
   --bg-color: white;
   --text-color: black;
 }
@@ -43,4 +43,4 @@ a {
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-} */
+}

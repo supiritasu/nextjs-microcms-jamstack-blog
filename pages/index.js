@@ -41,7 +41,7 @@ export default function Home({ blog }) {
       <Hero/>
 
       <div className="mx-auto text-center">
-        <h1 className="text-6xl font-bold">投稿記事</h1>
+        <h1 className="text-6xl font-bold text-gray-900 bg-white">投稿記事</h1>
       </div>
 
 

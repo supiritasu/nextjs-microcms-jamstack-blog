@@ -20,7 +20,7 @@ const Card = ({ post }) => {
   return (
     <div className="flex justify-center">
       <div
-        className="card w-full sm:w-96 bg-base-100 shadow-xl rounded-lg overflow-hidden transition duration-300 ease-in-out hover:ring-2 hover:ring-blue-100 mx-auto"
+        className="card w-full sm:w-96 bg-white shadow-xl rounded-lg overflow-hidden transition duration-300 ease-in-out hover:ring-2 hover:ring-blue-100 mx-auto"
         onMouseEnter={handleHover}
         onMouseLeave={handleLeave}
       >
