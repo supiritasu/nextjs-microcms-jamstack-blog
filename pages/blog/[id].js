@@ -33,10 +33,10 @@ export default function BlogId({ blog }) {
     <>
       <Header />
       <div className="mt-8 flex container mx-auto">
-        <div className="w-full md:w-1/4 p-4 ">
+      <div className="w-full md:w-1/4 p-4 hidden md:block">
           <Author post={blog} />
         </div>
-        <main className={`${styles.main} w-3/4`}>
+        <main className={`${styles.main} w-full `}>
           <h1 className={styles.title}>{blog.title}</h1>
           <h2 className={styles.category}>{blog.category}</h2>
           <p className={styles.publishedAt}>{blog.publishedAt}</p>
