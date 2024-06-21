@@ -1,6 +1,5 @@
 // components/author.js
 import React from 'react';
-import { SnsShare } from './sns_share';
 
 
 const Author = ({ }) => {
