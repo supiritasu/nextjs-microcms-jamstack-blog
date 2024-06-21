@@ -33,7 +33,7 @@ export default function BlogId({ blog }) {
     <>
       <Header />
       <div className="mt-8 flex container mx-auto">
-        <div className="w-full md:w-1/4 p-4">
+        <div className="w-full md:w-1/4 p-4 ">
           <Author post={blog} />
         </div>
         <main className={`${styles.main} w-3/4`}>
