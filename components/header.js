@@ -28,7 +28,7 @@ const Header = () => {
         </Link>
       </nav>
 
-    <ThemeController/>
+    {/* <ThemeController/> */}
   </div>
 </header>
   );

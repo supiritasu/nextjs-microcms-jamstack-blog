@@ -49,7 +49,7 @@ const Drawer = () => {
                   </a>
                 </Link>
               </div>
-              <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex flex-wrap items-center text-base justify-center md:flex">
+              <nav className="hidden md:flex md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 flex-wrap items-center text-base justify-center">
                 <Link href="/about">
                   <a className="mr-5 transition-transform duration-300 hover:scale-110">About</a>
                 </Link>
@@ -65,15 +65,25 @@ const Drawer = () => {
         </header>
       </div>
 
-
-      {/* ここから引き出し内容の記述 */}
+      {/* Drawer content */}
       <div className="drawer-side">
         <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 min-h-full bg-gray-900 text-gray-400">
-          {/* Sidebar content here */}
-          <li><a>Sidebar Item 1</a></li>
-          <li><a>Sidebar Item 2</a></li>
-          {/* <BlogList blogs={filteredBlogs} /> */}
+          <li>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
+          </li>
         </ul>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import Author from "../../components/author";
+import Drawer from "../../components/drawer";
 import Footer from "../../components/footer";
 import Header from "../../components/header";
 import Pagenation from "../../components/pagenation";
@@ -31,7 +32,7 @@ export const getStaticPaths = async () => {
 export default function BlogId({ blog }) {
   return (
     <>
-      <Header />
+      <Drawer />
       <div className="mt-8 flex container mx-auto">
       <div className="w-full md:w-1/4 p-4 hidden md:block">
           <Author post={blog} />
