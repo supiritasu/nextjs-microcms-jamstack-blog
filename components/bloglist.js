@@ -10,25 +10,24 @@ const formatDate = (dateString) => {
 
 const BlogList = ({ blogs }) => {
   return (
-    <>
-    <section className="text-gray-600 body-font overflow-hidden ">
-      <div className="container px-5 ">
+    <section className="text-gray-600 body-font overflow-hidden">
+      <div className="container px-5">
         <div className="-my-8 divide-y-2 divide-gray-100">
           {blogs.map((post) => (
             <div key={post.id} className="py-8 flex flex-wrap md:flex-nowrap">
               <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-                <div className="flex items-center mb-2">
+                <div className="flex flex-wrap items-center mb-2">
                   {post.tag.map((tag, index) => (
                     <p key={index} className="badge badge-outline text-sm text-gray-900 mr-2 mt-2.5">
                       {tag}
                     </p>
                   ))}
-                  </div>
+                </div>
                 <span className="mt-1 text-gray-500 text-sm">{formatDate(post.publishedAt)}</span>
               </div>
               <div className="md:flex-grow">
                 <h2 className="text-2xl font-medium text-gray-900 title-font mb-2">{post.title}</h2>
-                <p className="leading-relaxed">{post.discription}</p>
+                <p className="leading-relaxed">{post.description}</p>
                 <Link href={`/blog/${post.id}`}>
                   <a className="text-green-500 inline-flex items-center mt-4">
                     Read More
@@ -44,7 +43,6 @@ const BlogList = ({ blogs }) => {
         </div>
       </div>
     </section>
-    </>
   );
 };
 
