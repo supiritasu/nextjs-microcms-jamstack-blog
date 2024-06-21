@@ -8,6 +8,7 @@ import Card from "../components/card";
 import HomePagenation from "../components/home_pagenation";
 import { useState } from "react";
 import Hero from "../components/hero";
+import Drawer from "../components/drawer";
 
 // SSG
 export const getStaticProps = async () => {
@@ -36,7 +37,7 @@ export default function Home({ blog }) {
 
   return (
     <>
-      <Header />
+      <Drawer />
       <Hero/>
 
       <div className="mx-auto text-center">

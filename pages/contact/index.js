@@ -5,6 +5,7 @@ import Header from "../../components/header";
 import Footer from "../../components/footer";
 import Genre from "../../components/genre";
 import Contact from "../../components/contact";
+import Drawer from "../../components/drawer";
 
 
 
@@ -23,7 +24,7 @@ export const getStaticProps = async () => {
 export default function Home({ blog }) {
   return (
     <>
-    <Header/>
+    <Drawer/>
       <Contact/>
     <Footer/>
     </>
