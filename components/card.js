@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { TwitterShareButton, LineShareButton } from 'react-share'; // LineShareButtonを追加
 
 const formatDate = (dateString) => {
   const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
@@ -45,7 +46,23 @@ const Card = ({ post }) => {
                 ))}
                 <span className="badge badge-secondary text-xs mb-1">NEW</span>
               </div>
-              <p className="text-gray-500 text-xs">{formatDate(post.publishedAt)}</p>
+              <div className="flex items-center justify-between">
+                <p className="text-gray-500 text-xs">{formatDate(post.publishedAt)}</p>
+                <div className="flex items-center space-x-2">
+                  <TwitterShareButton
+                    url={`https://next-tech-psi.vercel.app/blog/${post.id}`} // 共有するURLを指定
+                    title={post.title}
+                  >
+                    <Image src="/twitter_icon.svg" alt="Share on Twitter" width={32} height={32} />
+                  </TwitterShareButton>
+                  <LineShareButton
+                    url={`https://next-tech-psi.vercel.app/blog/${post.id}`} // 共有するURLを指定
+                    title={post.title}
+                  >
+                    <Image src="/line_icon.svg" alt="Share on LINE" width={32} height={32} />
+                  </LineShareButton>
+                </div>
+              </div>
             </div>
           </a>
         </Link>
