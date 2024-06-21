@@ -25,13 +25,23 @@ const Card = ({ post }) => {
       >
         <Link href={`/blog/${post.id}`}>
           <a className="block">
-            <figure>
-              {post.thumbnail && post.thumbnail.url ? (
-                <Image src={post.thumbnail.url} alt={post.title} />
-              ) : (
-                <Image src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-              )}
-            </figure>
+          <figure>
+            {post.thumbnail && post.thumbnail.url ? (
+              <Image
+                src={post.thumbnail.url}
+                alt={post.title}
+                width={600}   // 画像の幅を適切に設定
+                height={400}  // 画像の高さを適切に設定
+              />
+            ) : (
+              <Image
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+                alt="Shoes"
+                width={600}   // 画像の幅を適切に設定
+                height={400}  // 画像の高さを適切に設定
+              />
+            )}
+          </figure>
             <div className="card-body p-4">
               <h2 className="card-title text-xl font-semibold mb-2 h-16 overflow-hidden">
                 {post.title}
